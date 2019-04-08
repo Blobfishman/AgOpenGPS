@@ -19,7 +19,7 @@ namespace AgOpenGPS
                 //compares the last recorded value to the current switch value
                 if (_switchValue != value)
                 {
-                    //records and toggles if requried
+                    //records and toggles if required
                     _switchValue = value;
                     WorkSwitchToggle();
                 }
@@ -29,13 +29,13 @@ namespace AgOpenGPS
         //Record of the required value based on switch type
         private int triggerValue;
 
-        //Called from "OpenGL.Designer.cs" when requied
+        //Called from "OpenGL.Designer.cs" when required
         public void CheckWorkSwitch()
         {
             //Checks the type of workswitch -> records the trigger value
             if (mf.mc.isWorkSwitchActiveLow == true) { triggerValue = 0; }
             else if (mf.mc.isWorkSwitchActiveLow == false) { triggerValue = 1; }
-            //Checks if swtich state has changed -> calls "set" accessor of "CurrentSwitchValue"
+            //Checks if switch state has changed -> calls "set" accessor of "CurrentSwitchValue"
             CurrentSwitchValue = mf.mc.workSwitchValue;
 
         }

@@ -2,6 +2,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace AgOpenGPS
 {
@@ -104,6 +105,12 @@ namespace AgOpenGPS
 
                 //update all data for new frame
                 UpdateFixPosition();
+
+                //Send NMEA Data to Serial Port
+                if (sp.IsOpen)
+                    sp.Write(pn.rawBuffer);
+                else
+                    Debug.WriteLine("Pls connect GPS Serial Port to Send NMEA data. BUFFER: " + pn.rawBuffer);
             }
 
             //must make sure arduinos are kept off if initializing

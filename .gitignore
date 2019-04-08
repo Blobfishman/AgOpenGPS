@@ -46,3 +46,9 @@ Network Trash Folder
 Temporary Items
 .apdisk
 AGOpenSteer/Fritzing/parts/user/PCF8574.fzp
+
+#build files
+obj/
+
+.vscode
+*/.vs/*
